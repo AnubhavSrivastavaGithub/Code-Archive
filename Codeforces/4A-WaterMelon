@@ -1,0 +1,18 @@
+w = int(input())  #main program
+if(w>2):
+     if((w%2)==0):
+          print("YES")
+     else:
+         print("NO")
+elif(w<=2):
+     print("NO")
+
+
+Test Cases :
+Input       Output
+  8           YES
+  5           NO
+  3           NO
+  4           YES
+  
+  
