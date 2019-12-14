@@ -1,0 +1,8 @@
+#Source Code:Python3
+n= input()
+p=n.find('H')
+if(p==-1):p=n.find('Q')
+if(p==-1):p=n.find('9')
+if(p==-1):print('NO')
+elif(p!=-1):print('YES')
+              
