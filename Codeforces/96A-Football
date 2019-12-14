@@ -1,0 +1,7 @@
+SourceCode:Python3
+s =input()
+n =len(s)
+t=s.find('1111111')
+p=s.find('0000000')
+if(t!=-1 or p!=-1):print('YES')
+else:print('NO')
