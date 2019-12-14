@@ -1,0 +1,11 @@
+#SourceCode:Pyhton3
+n = int(input())
+s=0
+for i in range(0,n):
+    t= input()
+    if(t[0]=='I'):s= s+20
+    if(t[0]=='D'):s= s+12
+    if(t[0]=='C'):s= s+6
+    if(t[0]=='T'):s= s+4
+    if(t[0]=='O'):s= s+8
+print(s)
