@@ -1,0 +1,55 @@
+//This Code is written by Anubhav Srivastava(anubhavsrivastavawebpage.wordpress.com)
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef double db;
+
+//Defines
+#define pb push_back
+#define f(n) for(ll i=0;i<n;i++)
+#define fl(i,a,b) for(ll i=a;i<b;i++)
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);
+
+//Important Functions
+ll gcd(ll a,ll b) { return b?gcd(b,a%b):a;}
+ll lcm(ll a, ll b) { return a * (b / gcd(a, b)); }
+#define min(a, b) (((a)<(b))?(a):(b))
+#define max(a, b) (((a)<(b))?(b):(a))
+
+//Templates
+
+//Main Function
+int main() {
+	// your code goes here
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll n,q,t,b,v1,j;
+    cin >> t;
+    while(t--)
+    {
+        cin >> n;
+        vector<int> v;
+        for(int i=0;i<n;i++)
+        {
+            cin >> v1;
+            v.push_back(v1);
+        }
+        sort(v.begin(),v.end());
+        int i=(n/2) - 1,j=(n/2) +1;
+        cout << v[n/2] <<" ";
+        while(i>=0 || j<n)
+        {
+            if(i>=0){
+                cout << v[i]<<" ";
+                i--;
+            }
+            if(j<n)
+            {
+                cout << v[j] << " ";
+                j++;
+            }
+        }
+        cout << "\n";
+    }
+	return 0;
+}
