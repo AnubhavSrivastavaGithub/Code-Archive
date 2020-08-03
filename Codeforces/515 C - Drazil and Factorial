@@ -1,0 +1,48 @@
+//This Code is written by Anubhav Srivastava(anubhavsrivastavawebpage.wordpress.com)
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef double db;
+
+//Defines
+#define pb push_back
+#define f(n) for(ll i=0;i<n;i++)
+#define fl(i,a,b) for(ll i=a;i<b;i++)
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);
+
+//Important Functions
+ll gcd(ll a,ll b) { return b?gcd(b,a%b):a;}
+ll lcm(ll a, ll b) { return a * (b / gcd(a, b)); }
+#define min(a, b) (((a)<(b))?(a):(b))
+#define max(a, b) (((a)<(b))?(b):(a))
+
+//Templates
+
+//Main Function
+int main() {
+	// your code goes here
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll n,m,b,v1,j,c;
+    string s;
+    cin >>n>>s;
+    string t="";
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='1' || s[i]=='0') t=t;
+        else
+        {
+            if(s[i]=='2') t+="2";
+            else if(s[i]=='3') t+= "3";
+            else if(s[i]=='4') t+="223";
+            else if(s[i]=='5') t+="5";
+            else if(s[i]=='6') t+="35";
+            else if(s[i]=='7') t+="7";
+            else if(s[i]=='8') t+="7222";
+            else t+="3372";
+        }
+   }
+   sort(t.begin(),t.end());
+    for(int i=t.length()-1;i>=0;i--)cout << t[i];
+	return 0;
+}
