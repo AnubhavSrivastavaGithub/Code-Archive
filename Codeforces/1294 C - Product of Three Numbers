@@ -1,0 +1,112 @@
+//This Code is written by Anubhav Srivastava(anubhavsrivastavawebpage.wordpress.com)
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef double db;
+
+//Defines
+#define pb push_back
+#define f(n) for(ll i=0;i<n;i++)
+#define fl(i,a,b) for(ll i=a;i<b;i++)
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);
+
+//Important Functions
+ll gcd(ll a,ll b) { return b?gcd(b,a%b):a;}
+ll lcm(ll a, ll b) { return a * (b / gcd(a, b)); }
+#define min(a, b) (((a)<(b))?(a):(b))
+#define max(a, b) (((a)<(b))?(b):(a))
+
+//Templates
+void primef(ll n,vector<int> &v,set<int> &s)
+{
+    ll p=n;
+    while(p%2==0)
+    {
+        v.push_back(2);
+        s.insert(2);
+        p/=2;
+    }
+    for(int i=3;i<sqrt(n);i+=2)
+    {
+        while(p%i==0)
+        {
+            v.push_back(i);
+            p/=i;
+            s.insert(i);
+        }
+
+    }
+    if(p>2)
+    {
+        v.push_back(p);
+        s.insert(p);
+    }
+}
+
+//Main Function
+int main() {
+	// your code goes here
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll n,m,a,b,t;
+    cin >> t;
+    while(t--)
+    {
+        vector<int> v;
+        set<int> s;
+        cin >> n ;
+        primef(n,v,s);
+        if(s.size()>=3)
+        {
+            cout << "YES\n";
+            if(v.size()==3)
+            {
+                cout << v[0] <<" "<<v[1]<<" " <<v[2]<<"\n";
+            }
+            else{
+                cout << v[0] <<" ";
+                ll p=1;
+                for(int i=1;i<v.size()-1;i++)
+                {
+                    p*=v[i];
+                }
+                cout << p <<" "<< v[v.size()-1]<<"\n";
+            }
+        }
+        else if(s.size()==2)
+        {
+            if(v.size()<4)
+            {
+                cout << "NO\n";
+            }
+            else{
+                    cout << "YES\n";
+                cout << v[0] <<" ";
+                ll p=1;
+                for(int i=1;i<v.size()-1;i++)
+                {
+                    p*=v[i];
+                }
+                cout << p <<" "<< v[v.size()-1]<<"\n";
+            }
+        }
+        else if(s.size()==1)
+        {
+            if(v.size()>=6)
+            {
+                cout << "YES\n";
+                cout << v[0] <<" "<<v[1]*v[2]<<" ";
+                ll p=1;
+                for(int i=3;i<v.size();i++)
+                {
+                    p*=v[i];
+                }
+                cout << p <<"\n";
+            }
+            else{
+                cout <<"NO\n";
+            }
+        }
+    }
+	return 0;
+}
