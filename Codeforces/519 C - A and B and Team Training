@@ -1,0 +1,36 @@
+//This Code is written by Anubhav Srivastava(anubhavsrivastavawebpage.wordpress.com)
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef double db;
+
+//Defines
+#define pb push_back
+#define f(n) for(ll i=0;i<n;i++)
+#define fl(i,a,b) for(ll i=a;i<b;i++)
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);
+
+//Important Functions
+ll gcd(ll a,ll b) { return b?gcd(b,a%b):a;}
+ll lcm(ll a, ll b) { return a * (b / gcd(a, b)); }
+#define min(a, b) (((a)<(b))?(a):(b))
+#define max(a, b) (((a)<(b))?(b):(a))
+
+//Templates
+//Main Function
+int main() {
+	// your code goes here
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll n,m,t,k,v1;
+    cin >> n >> m;
+    if(n==m) cout << (n+m)/3;
+    else if(max(n,m)>=2*min(n,m)) cout << min(n,m);
+    else
+    {
+        ll ans = (max(n,m)-min(n,m));
+        if(min(n,m)-(max(n,m)-min(n,m))>=0) ans += (2*(min(m,n)-(max(n,m)-min(n,m))))/3;
+        cout << ans ;
+    }
+	return 0;
+}
