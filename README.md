@@ -1,2 +1,2 @@
-# CompetitiveProgramming
-I will post CP Problems &amp; Solutions here.
+# Archive for the Codes I write
+
